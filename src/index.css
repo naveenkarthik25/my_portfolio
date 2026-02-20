@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 10% 5%;
+    --foreground: 40 20% 92%;
+
+    --card: 30 8% 9%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 30 8% 9%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 38 90% 55%;
+    --primary-foreground: 30 10% 5%;
+
+    --secondary: 30 6% 14%;
+    --secondary-foreground: 40 15% 80%;
+
+    --muted: 30 6% 12%;
+    --muted-foreground: 30 8% 50%;
+
+    --accent: 38 70% 45%;
+    --accent-foreground: 40 20% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 8% 15%;
+    --input: 30 8% 15%;
+    --ring: 38 90% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 30 8% 7%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 38 90% 55%;
+    --sidebar-primary-foreground: 30 10% 5%;
+    --sidebar-accent: 30 6% 14%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 8% 15%;
+    --sidebar-ring: 38 90% 55%;
+
+    /* Custom tokens */
+    --glass: 30 8% 12%;
+    --glass-border: 30 10% 20%;
+    --highlight: 38 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  ::selection {
+    background: hsl(38 90% 55% / 0.3);
+    color: hsl(40 20% 95%);
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'Fira Code', monospace;
+  }
+  .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+  .text-glow {
+    text-shadow: 0 0 30px hsl(38 90% 55% / 0.5), 0 0 60px hsl(38 90% 55% / 0.2);
+  }
+  .glass-card {
+    background: hsl(var(--glass) / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.5);
+  }
+  .glass-card-hover {
+    background: hsl(var(--glass) / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.5);
+    transition: all 0.3s ease;
+  }
+  .glass-card-hover:hover {
+    border-color: hsl(38 90% 55% / 0.3);
+    box-shadow: 0 0 30px hsl(38 90% 55% / 0.08);
+    transform: translateY(-2px);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(38 90% 55%), hsl(38 100% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .line-accent {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(38 90% 55%), transparent);
+    border-radius: 2px;
+  }
+}
